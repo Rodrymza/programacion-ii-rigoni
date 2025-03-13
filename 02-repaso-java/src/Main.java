@@ -49,7 +49,6 @@ public class Main {
         esPositivo(numberB);
         mayorQueDiez(numberB);
 
-
     }
 
     public static void ejercicio05() {
@@ -162,18 +161,12 @@ public class Main {
         return number;
     }
     public static void esPositivo(int numero) {
-        if (numero >=0) {
-            System.out.println(numero + " es positivo");
-        } else {
-            System.out.println(numero + " es negativo");
-        }
+        String mensaje = (numero >= 0) ? numero + " es positivo" : numero + " es negativo";
+        System.out.println(mensaje);
     }
     public static void mayorQueDiez(int numero) {
-        if (numero >= 10) {
-            System.out.println(numero + " es mayor a diez");
-        } else {
-            System.out.println(numero + " es menor a diez");
-        }
+        String mensaje = (numero >= 10) ? numero + " es mayor o igual a diez" : numero + " es menor a diez";
+        System.out.println(mensaje);
     }
 
 }
