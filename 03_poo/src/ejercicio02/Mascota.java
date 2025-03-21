@@ -42,6 +42,6 @@ public class Mascota {
     }
     public void cumplirAnios(){
         this.edad += 1;
-        System.out.println("Feliz cumpleaños " + this.nombre + "! Ahora tiene " + this.edad + "años.");
+        System.out.println("Feliz cumpleaños " + this.nombre + "! Ahora tiene " + this.edad + " años.");
     }
 }

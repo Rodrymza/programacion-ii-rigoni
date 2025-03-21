@@ -1,17 +1,17 @@
 package ejercicio04;
 
-public class Gallilna {
+public class Gallina {
     int idGalina;
     int edad;
     int huevosPuestos;
 
-    public Gallilna(int idGalina, int edad, int huevosPuestos) {
+    public Gallina(int idGalina, int edad, int huevosPuestos) {
         this.idGalina = idGalina;
         this.edad = edad;
         this.huevosPuestos = huevosPuestos;
     }
 
-    public Gallilna() {}
+    public Gallina() {}
 
     public int getIdGalina() {
         return idGalina;
@@ -37,8 +37,19 @@ public class Gallilna {
         this.huevosPuestos = huevosPuestos;
     }
 
-    public void ponerHuevo(){
-        this.huevosPuestos ++;
+    public void ponerHuevo(int cantidad){
+        this.huevosPuestos += cantidad;
         System.out.println("La cantidad de huevos puestos es ahora " + this.huevosPuestos);
+    }
+
+    public void envejecer() {
+        this.edad ++;
+        System.out.println("La gallina " + this.idGalina + " ahora tiene " + this.edad + " años");
+    }
+
+    public void mostrarEstado() {
+        System.out.println("Gallina: \n ID Gallina: " + this.idGalina + "\n" +
+                "Edad: " + this.edad + "\n" +
+                "Huevos puestos: " + this.huevosPuestos);
     }
 }

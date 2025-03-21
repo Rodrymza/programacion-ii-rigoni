@@ -14,15 +14,19 @@ public class Libro {
         this.anioPublicacion = anioPublicacion;
     }
     public Libro() {}
+
     public String getTitulo() {
         return titulo;
     }
+
     public String getAutor() {
         return autor;
     }
+
     public int getAnioPublicacion() {
         return anioPublicacion;
     }
+
     public void setAnioPublicacion(int anioPublicacion) {
         if (anioPublicacion >=1900 && anioPublicacion <= LocalDate.now().getYear()) {
             this.anioPublicacion = anioPublicacion;
