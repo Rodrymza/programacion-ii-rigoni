@@ -1,5 +1,7 @@
+import java.util.Scanner;
 public class Ejercicios {
     //Ejercicio 01, Año bisiesto
+    Scanner input = new Scanner(System.in);
     public void anioBisiesto(int anio) {
         if (anio % 4 == 0 && anio % 100 != 0 || anio % 400 == 0) {
             System.out.println("El año " + anio + " es bisiesto");
@@ -51,5 +53,94 @@ public class Ejercicios {
         }
         System.out.println("El descuento es $" + descuento);
         System.out.println("El precio final es $" + (precio - descuento));
+    }
+    //Ejercicio 05: Suma de Números Pares (Ciclo while)
+    public void sumarPares(){
+        int numeroUsuario;
+        int suma = 0;
+        do {
+            System.out.println("Ingresa un numero cualquiera (0 para terminar)");
+            numeroUsuario = Integer.parseInt(input.nextLine());
+            if (numeroUsuario % 2 == 0) {
+                suma += numeroUsuario;
+            }
+        } while (numeroUsuario != 0);
+        System.out.println("La suma de numeros pares es: " + suma);
+    }
+
+    //Ejercicio 06: Contador de Números Positivos y Negativos (Ciclo for)
+    public void contarNumeros() {
+        int numero;
+        int numerosPositivos = 0;
+        int numerosNegativos = 0;
+        for (int i = 0; i <10 ; i++) {
+            System.out.println("Ingrese cualquier numero (" + (i+1) + "/10)");
+            numero = Integer.parseInt(input.nextLine());
+            if (numero >= 0) {
+                numerosPositivos++;
+            } else {
+                numerosNegativos++;
+            }
+        }
+        System.out.println("Numeros positivos: " + numerosPositivos + "\n" +
+                "Numeros negativos: " + numerosNegativos);
+    }
+    public void validarEntrada(){
+        int nota;
+        do {
+            System.out.println("Ingrese una nota");
+            nota = Integer.parseInt(input.nextLine());
+            if (nota<0 || nota > 10) {
+                System.out.println("Ingrese una nota valida");
+            }
+        }while (nota <0 || nota >10);
+        System.out.println("La nota es " + nota);
+    }
+    //Ejercicio 8: Cálculo del Precio Final de un Producto (Funciones en Java)
+    //Crea un metodo calcularPrecioFinal(double precioBase, double
+    //impuesto, double descuento) que calcule el precio final de un producto en un
+    //e-commerce. La fórmula es:
+    //PrecioFinal=PrecioBase+(PrecioBase×Impuesto)−(PrecioBase×Descuento)PrecioFinal
+    //PrecioBase + (PrecioBase \times Impuesto) - (PrecioBase \times Descuento)
+    public double calcularPrecioFinal(double preciobase, double impuesto, double descuento) {
+        impuesto /= 100;
+        descuento /= 100;
+        double precioFinal =  preciobase+(preciobase*impuesto)-(preciobase*descuento);
+        System.out.println("Impuesto: $" + preciobase*impuesto);
+        System.out.println("Descuento: $" + preciobase*descuento);
+        System.out.println("El preciofinal es $" + precioFinal);
+        return precioFinal;
+    }
+
+    //Ejercicio 09 Calculo de Envio
+    public double calcularCostoEnvio(double peso, String zona) {
+        int costoNacional = 5;
+        int costoInternacional = 10;
+        double costoFinal;
+        switch (zona) {
+            case "Nacional":
+                costoFinal = costoNacional * peso;
+                System.out.println("El costo de envio es $" + costoFinal);
+                return costoFinal;
+            case "Internacional":
+                costoFinal = costoInternacional * peso;
+                System.out.println("El costo de envio es $" + costoFinal);
+                return costoFinal;
+            default:
+                System.out.println("Zona no valida");
+                return 0;
+        }
+    }
+    public double calcularTotalCompra(double precioProducto, double costoEnvio) {
+        double totalCompra = precioProducto + costoEnvio;
+        System.out.println("El total de la compra es $" + totalCompra);
+        return totalCompra;
+    }
+
+    //Ejercicio 10: Gestion de Stock
+    public int actualizarStock(int stockActual, int cantidadVendida, int cantidadRecibida) {
+        int stockFinal = stockActual - cantidadVendida + cantidadRecibida;
+        System.out.println("El stock final es " + stockFinal);
+        return stockFinal;
     }
 }
