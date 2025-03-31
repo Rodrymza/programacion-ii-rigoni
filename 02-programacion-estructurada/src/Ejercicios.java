@@ -1,7 +1,10 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 public class Ejercicios {
     //Ejercicio 01, Año bisiesto
     Scanner input = new Scanner(System.in);
+    public static double descuentoEspecial = 0.10;
+
     public void anioBisiesto(int anio) {
         if (anio % 4 == 0 && anio % 100 != 0 || anio % 400 == 0) {
             System.out.println("El año " + anio + " es bisiesto");
@@ -143,4 +146,29 @@ public class Ejercicios {
         System.out.println("El stock final es " + stockFinal);
         return stockFinal;
     }
+
+    //Ejercicio 11: Variables globales y locles
+    public static double calcularDescuentoEspecial(double precio) {
+        double descuentoAplicado = (precio * descuentoEspecial);
+        System.out.println("El descuento total es de $" + descuentoAplicado);
+        return (precio - descuentoAplicado);
+    }
+
+    //Ejercicio 12: Lista de precios de productos con Modificacion
+    public static void mostrarProductos(double[] precios) {
+        System.out.println("Lista de precios");
+        for (double precio : precios) {
+            System.out.println("El precio del producto es $" + precio);
+        }
+    }
+    //Ejercicio 13: Funcion recursiva
+    public static void funcionRecursiva(int indice, double[] array) {
+        if (indice == 0) {
+            System.out.println("El precio del producto es $" + array[indice]);
+        } else {
+            System.out.println("El precio del producto es $" + array[indice]);
+            funcionRecursiva(indice - 1, array);
+        }
+    }
+
 }

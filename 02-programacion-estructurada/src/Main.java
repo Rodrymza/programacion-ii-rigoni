@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         Ejercicios ejercicios = new Ejercicios();
-        ejercicio10();
+        ejercicio13();
     }
         //Ejercicio 9
     public static void ejercicio08() {
@@ -65,4 +65,31 @@ public class Main {
         int stockFinal = ejercicios.actualizarStock(stock, cantidadVendida, cantidadRecibida);
     }
 
+    //Ejercicio 11: Variable local y global
+    public static void ejercicio11() {
+        double precioInicial = 1300;
+        System.out.println("El precio inicial es $" + precioInicial);
+        double preciofinal = Ejercicios.calcularDescuentoEspecial(precioInicial);
+        System.out.println("El precio final es $" + preciofinal);
+    }
+
+    //Ejercicio 12: Lista de productos
+    public static void ejercicio12() {
+        double[] precios = {100, 200, 300, 400, 500};
+        System.out.println("Lista de precios");
+        Ejercicios.mostrarProductos(precios);
+        precios[0] = 150;
+        precios[3] = 450;
+        System.out.println("Lista de precios modificada");
+        Ejercicios.mostrarProductos(precios);
+    }
+
+    public static void ejercicio13() {
+        double[] precios = {100, 200, 300, 400, 500};
+        System.out.println("Lista de precios");
+        Ejercicios.funcionRecursiva(precios.length - 1, precios);
+        precios[1] = 350;
+        System.out.println("Lista de precios modificada");
+        Ejercicios.funcionRecursiva(precios.length - 1, precios);
+    }
 }
