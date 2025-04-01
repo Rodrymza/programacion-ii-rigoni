@@ -18,9 +18,10 @@ public class Empleado {
     public Empleado(String nombre, String puesto) {
         this.nombre = nombre;
         this.puesto = puesto;
-        totalEmpleados++;
         this.id = totalEmpleados + 1000;
-        this.salario = 500.0; // Default salary
+        this.salario = 500.0; // Salario por defecto
+        totalEmpleados++;
+
     }
 
     public int getId() {
@@ -76,5 +77,14 @@ public class Empleado {
     public static int mostarTotalEmpleados() {
         return totalEmpleados;
     }
+
+    public void actualizarSalario(double nuevoSalario) {
+        this.salario = nuevoSalario;
+    }
+
+    public void actualizarSalario(int porcentaje) {
+        this.salario += this.salario * ((double) porcentaje / 100);
+    }
+
 
 }
