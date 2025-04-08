@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class Alumno {
@@ -7,14 +8,13 @@ public class Alumno {
     private String nombre;
     private String apellido;
     private Date fechaNacimiento;
-    private ArrayList<Nota> notas;
+    private List<Nota> notas = new ArrayList<>();
 
     public Alumno(long legajo, String nombre, String apellido, Date fechaNacimiento) {
         this.legajo = legajo;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
-        this.notas = new ArrayList<>();
     }
 
     @Override
@@ -23,7 +23,7 @@ public class Alumno {
                 "legajo=" + legajo +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", fechaNacimiento=" + fechaNacimiento +
+                ", fechaNacimiento=" + fechaNacimiento.toString() +
                 '}';
     }
 
@@ -42,4 +42,42 @@ public class Alumno {
     public void agregarNota(Nota nota) {
         this.notas.add(nota);
     }
+
+    public double mejorNota(Integer codigoCatedra) {
+        Nota mejor = new Nota();
+        for (Nota nota : this.notas) {
+            if (nota.esRecuperatorio()) {
+                continue;
+            }
+            if (codigoCatedra != null && nota.getCatedra().getCodigo() == codigoCatedra) {
+                if (mejor.getValor() < nota.getValor()) {
+                    mejor = nota;
+                }
+            } else {
+                if (mejor.getValor() < nota.getValor()) {
+                    mejor = nota;
+                }
+            }
+        }
+        return mejor.getValor();
+    }
+
+    public double promedioNotas(Integer codigoCatedra) {
+        double promedio = 0;
+        int acumulador = 0;
+        boolean encontrado = false;
+        for (Nota nota : notas) {
+            if (codigoCatedra != null && nota.getCatedra().getCodigo() == codigoCatedra) {
+                promedio += nota.getValor();
+                acumulador ++;
+                encontrado = true;
+            } else {
+                promedio += nota.getValor();
+                acumulador ++;
+            }
+
+        }
+        return promedio/acumulador;
+    }
+
 }
