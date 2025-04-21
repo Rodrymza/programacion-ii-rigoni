@@ -4,7 +4,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class TicketSoporte {
-    private static int id;
+    private static int contador = 1;
+    private int id = contador++;
     private String descripcion;
     private String estado;
     private LocalDateTime fechaCreacion;
@@ -27,18 +28,25 @@ public class TicketSoporte {
         return getAsignadoToString(usuario);
     }
 
-    public TicketSoporte(String descipcion, Usuario usuario) {
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public TicketSoporte(String descripcion, Usuario usuario) {
         this.descripcion = descripcion;
         this.estado = "Abierto";
         this.fechaCreacion = LocalDateTime.now();
-        id++;
+        this.usuario = usuario;
     }
 
     public TicketSoporte(String descripcion) {
         this.descripcion = descripcion;
         this.estado = "Abierto";
         this.fechaCreacion = LocalDateTime.now();
-        id++;
     }
 
     public TicketSoporte(String descripcion, Usuario usuario, Tecnico tecnico) {
@@ -50,8 +58,18 @@ public class TicketSoporte {
         id++;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void cerrarTicket(){
-        this.estado = "Cerrado";
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        String fechaHora = LocalDateTime.now().format(formato);
+        this.estado = "Cerrado - " + fechaHora;
     }
 
     public String dateToString() {
@@ -61,14 +79,12 @@ public class TicketSoporte {
     }
 
     public String mostrarDetalle() {
-        String mensaje = "Id: " + id + "\n" +
+        return  "Id: " + id + "\n" +
                 "Descripcion: " + descripcion + "\n" +
                 "Estado: " + estado + "\n" +
                 "Tecnico: " + getTecnicoString() + "\n" +
                 "Usuario: " + getUsuarioString()     + "\n" +
                 "Fecha de creacion: " + dateToString() + "\n";
-
-        return mensaje;
     }
 
     public void setUsuario(Usuario usuario) {
@@ -79,5 +95,8 @@ public class TicketSoporte {
     public void asignarTecnico(Tecnico tecnico) {
         System.out.println("El tecnico " + tecnico + " ha sido asignado al ticket " + id);
         this.tecnico = tecnico;
+        this.estado = "En Proceso";
     }
+
+
 }
