@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class Concesionaria {
     private String nombre;
@@ -85,7 +86,6 @@ public class Concesionaria {
         return autosMas;
     }
 
-
     public Auto autoMenosKmRecorridos() {
         Auto autoMin = null;
         int cantMinima = Integer.MAX_VALUE;
@@ -96,5 +96,34 @@ public class Concesionaria {
             }
         }
         return autoMin;
+    }
+
+    public Auto buscarAuto(String patente) {
+        Auto autoEncontrado = null;
+        int i = 0;
+        while (i < autos.size() && !autos.get(i).getPatente().equalsIgnoreCase(patente)){
+            i++;
+        }
+        if (i<autos.size()){
+            autoEncontrado = autos.get(i);
+        }
+        return autoEncontrado;
+    }
+
+    //busqueda con iterator
+    public Auto buscarAutoIterator(String patente) {
+        Auto auto = null;
+        Iterator<Auto> iterator = autos.iterator();
+        while (iterator.hasNext() && auto == null) {
+            Auto currentAuto = iterator.next();
+            if (currentAuto.getPatente().equalsIgnoreCase(patente)) {
+                return currentAuto;
+            }
+        }
+         // Si no se encontró el auto, auto seguirá siendo null
+         // Si se encontró, auto contendrá la referencia al auto encontrado
+         // Se puede retornar directamente
+
+        return null;
     }
 }

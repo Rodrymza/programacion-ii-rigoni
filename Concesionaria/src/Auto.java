@@ -13,6 +13,10 @@ public class Auto {
         return kmRecorridos;
     }
 
+    public String getPatente() {
+        return patente;
+    }
+
     @Override
     public String toString() {
         return "Auto{" +
