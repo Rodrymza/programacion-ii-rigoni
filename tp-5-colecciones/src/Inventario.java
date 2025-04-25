@@ -17,10 +17,10 @@ public class Inventario {
         if (productos.isEmpty()) {
             System.out.println("No hay productos en el inventario.");
         } else {
+            System.out.println("-------------------------");
             System.out.println("Lista de productos:");
             for (Producto producto : productos) {
-                System.out.println("-------------------------");
-                System.out.println(producto.mostrarInfo());
+                producto.mostrarInfo();
             }
             System.out.println("-------------------------");
         }

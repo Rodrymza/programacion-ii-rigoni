@@ -51,7 +51,18 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public String mostrarInfo(){
-        return id + "-"  + nombre + " - " + categoria + " - $"+ precio;
+    public void mostrarInfo(){
+        System.out.println(id + "-"  + nombre + " - " + categoria + " - $"+ precio + " Stock: " + cantidad);
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", precio=" + precio +
+                ", cantidad=" + cantidad +
+                ", categoria=" + categoria +
+                '}';
     }
 }
