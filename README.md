@@ -3,22 +3,13 @@ Alumno Ramirez Rodrigo, TUP Comision 3
 
 ##Lista de Trabajos Prácticos
 
-  *Trabajo Práctico 1
   
-  [TP-1 link](https://github.com/Rodrymza/programacion-ii-rigoni/tree/bbfc22af03bf1ccb691911dea1bd346663bf4ef3/trabajos-practicos/tp1-programacion-estructurada)
+  [*Trabajo Practico 1](https://github.com/Rodrymza/programacion-ii-rigoni/tree/bbfc22af03bf1ccb691911dea1bd346663bf4ef3/trabajos-practicos/tp1-programacion-estructurada)
 
-  *Trabajo Practico 2
+  [*Trabajo Practico 2](https://github.com/Rodrymza/programacion-ii-rigoni/tree/bbfc22af03bf1ccb691911dea1bd346663bf4ef3/trabajos-practicos/tp2-poo)
   
-  [TP-2 link](https://github.com/Rodrymza/programacion-ii-rigoni/tree/bbfc22af03bf1ccb691911dea1bd346663bf4ef3/trabajos-practicos/tp2-poo)
-
-  *Trabajo Practico 3
+  [*Trabajo Practico 3](https://github.com/Rodrymza/programacion-ii-rigoni/tree/bbfc22af03bf1ccb691911dea1bd346663bf4ef3/trabajos-practicos/tp3-poo)
   
-  [TP-3 link](https://github.com/Rodrymza/programacion-ii-rigoni/tree/bbfc22af03bf1ccb691911dea1bd346663bf4ef3/trabajos-practicos/tp3-poo)
-
-  *Trabajo Practico 4
+  [*Trabajo Practico 4](https://github.com/Rodrymza/programacion-ii-rigoni/tree/bbfc22af03bf1ccb691911dea1bd346663bf4ef3/trabajos-practicos/tp4-uml/src)
   
-  [TP-4 link](https://github.com/Rodrymza/programacion-ii-rigoni/tree/bbfc22af03bf1ccb691911dea1bd346663bf4ef3/trabajos-practicos/tp4-uml/src)
-
-  *Trabajo Practico 5
-  
-  [TP-5 link](https://github.com/Rodrymza/programacion-ii-rigoni/tree/bbfc22af03bf1ccb691911dea1bd346663bf4ef3/trabajos-practicos/tp-5-colecciones)
+  [*Trabajo Practico 5](https://github.com/Rodrymza/programacion-ii-rigoni/tree/bbfc22af03bf1ccb691911dea1bd346663bf4ef3/trabajos-practicos/tp-5-colecciones)
