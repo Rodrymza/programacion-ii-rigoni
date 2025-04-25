@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Inventario inventario = new Inventario();
         inventario.agregarProducto(new Producto("1001", "Lomitos de atún 170gr", 200, 10, CategoriaProducto.ALIMENTOS));
-        inventario.agregarProducto(new Producto("1002", "Cerveza 355ml", 2300, 20, CategoriaProducto.ALIMENTOS));
+        inventario.agregarProducto(new Producto("1002", "Cerveza 355ml", 2300, 30, CategoriaProducto.ALIMENTOS));
         inventario.agregarProducto(new Producto("1103", "Parlante Bluetooth BTS", 12000, 15, CategoriaProducto.ELECTRONICA));
         inventario.agregarProducto(new Producto("1104", "Cargador USB", 5000, 30, CategoriaProducto.ELECTRONICA));
         inventario.agregarProducto(new Producto("1205", "Camiseta de algodón", 1500, 25, CategoriaProducto.ROPA));
@@ -46,8 +46,11 @@ public class Main {
         System.out.println("Total de productos en el inventario: " + inventario.obtenerTotalStock());
 
         //producto con mayor stock
-        System.out.println("Producto con mayor stock: ");
-        inventario.obtenerProductoMayorStock().mostrarInfo();
+        System.out.println("Productos con mayor stock: ");
+        ArrayList<Producto> listaMayorStock = inventario.obtenerProductosMayorStock();
+        for (Producto producto : listaMayorStock) {
+            producto.mostrarInfo();
+        }
 
         //filtrar productos entre 3000 y 5000
         System.out.println("Productos filtrados");

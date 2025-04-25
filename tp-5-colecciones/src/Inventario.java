@@ -47,16 +47,15 @@ public class Inventario {
         }
     }
 
-    public void actualizarStock(String id, int nuevaCantidad) {
+    public void actualizarStock(String id, int cantidadVendida) {
         Producto producto = buscarProductoPorId(id);
-        if (producto != null) {
-            producto.setCantidad(nuevaCantidad);
-            System.out.println("Cantidad de " + producto.getNombre() + " actualizada a: " + nuevaCantidad);
+        if (producto == null) {
+            System.out.println("No se encontro el producto con ID" + id);
         } else {
-            System.out.println("El producto con ID " + id + " no se encontró en el inventario.");
+            producto.actualizarCantidad(cantidadVendida);
         }
-    }
 
+    }
     public ArrayList<Producto> filtrarPorCategoria(CategoriaProducto categoria) {
         ArrayList<Producto> productosCategoria = new ArrayList<>();
         for (Producto productoActual : productos ) {
@@ -78,16 +77,21 @@ public class Inventario {
         return totalStock;
     }
 
-    public Producto obtenerProductoMayorStock() {
+    public ArrayList<Producto> obtenerProductosMayorStock() {
         int mayorStock = 0;
+        ArrayList<Producto> productosConMayorStock = new ArrayList<>();
         Producto productoMayorStock = null;
         for (Producto producto : productos) {
             if (producto.getCantidad() > mayorStock) {
                 mayorStock = producto.getCantidad();
-                productoMayorStock = producto;
+                productosConMayorStock.clear();
+                productosConMayorStock.add(producto);
+            } else if (producto.getCantidad() == mayorStock) {
+                productosConMayorStock.add(producto);
+
             }
         }
-        return productoMayorStock;
+        return productosConMayorStock;
     }
 
     public ArrayList<Producto> filtrarProductoPrecio(double minimo, double maximo) {

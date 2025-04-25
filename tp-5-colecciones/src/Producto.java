@@ -65,4 +65,13 @@ public class Producto {
                 ", categoria=" + categoria +
                 '}';
     }
+
+    public void actualizarCantidad(int cantidadVendida) {
+            if (cantidad == 0) {
+                System.out.println("No hay existencias de " + nombre);
+            } else {
+                cantidad -= cantidadVendida;
+            }
+
+    }
 }
