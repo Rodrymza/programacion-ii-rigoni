@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Inventario inventario = new Inventario();
-        inventario.agregarProducto(new Producto("1001", "Lomitos de atún 170gr", 2500, 10, CategoriaProducto.ALIMENTOS));
+        inventario.agregarProducto(new Producto("1001", "Lomitos de atún 170gr", 200, 10, CategoriaProducto.ALIMENTOS));
         inventario.agregarProducto(new Producto("1002", "Cerveza 355ml", 2300, 20, CategoriaProducto.ALIMENTOS));
         inventario.agregarProducto(new Producto("1103", "Parlante Bluetooth BTS", 12000, 15, CategoriaProducto.ELECTRONICA));
         inventario.agregarProducto(new Producto("1104", "Cargador USB", 5000, 30, CategoriaProducto.ELECTRONICA));
@@ -34,5 +34,28 @@ public class Main {
         System.out.println("Eliminando producto con ID 1307");
         inventario.eliminarProducto("1307");
         inventario.listarProductos();
+
+        //Agregar 5 productos mas
+        inventario.agregarProducto(new Producto("1308", "Mesa de comedor", 20000, 8, CategoriaProducto.HOGAR));
+        inventario.agregarProducto(new Producto("1010", "Galletas de chocolate", 1500, 12, CategoriaProducto.ALIMENTOS));
+        inventario.agregarProducto(new Producto("1401", "Laptop HP", 150000, 5, CategoriaProducto.ELECTRONICA));
+        inventario.agregarProducto(new Producto("1402", "Monitor Samsung", 30000, 7, CategoriaProducto.ELECTRONICA));
+        inventario.agregarProducto(new Producto("1503", "Chaqueta de cuero", 5000, 10, CategoriaProducto.ROPA));
+
+        //mostrar total stock
+        System.out.println("Total de productos en el inventario: " + inventario.obtenerTotalStock());
+
+        //producto con mayor stock
+        System.out.println("Producto con mayor stock: ");
+        inventario.obtenerProductoMayorStock().mostrarInfo();
+
+        //filtrar productos entre 3000 y 5000
+        System.out.println("Productos filtrados");
+        ArrayList<Producto> productosFiltrados = inventario.filtrarProductoPrecio(3000, 5000);
+        for (Producto producto : productosFiltrados ) {
+            producto.mostrarInfo();
+        }
+        //listar productos
+        inventario.mostrarCategoriasDisponibles();
     }
 }

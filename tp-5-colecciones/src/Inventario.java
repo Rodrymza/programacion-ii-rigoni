@@ -69,4 +69,41 @@ public class Inventario {
         }
         return productosCategoria;
     }
+
+    public int obtenerTotalStock() {
+        int totalStock = 0;
+        for (Producto producto : productos) {
+            totalStock += producto.getCantidad();
+        }
+        return totalStock;
+    }
+
+    public Producto obtenerProductoMayorStock() {
+        int mayorStock = 0;
+        Producto productoMayorStock = null;
+        for (Producto producto : productos) {
+            if (producto.getCantidad() > mayorStock) {
+                mayorStock = producto.getCantidad();
+                productoMayorStock = producto;
+            }
+        }
+        return productoMayorStock;
+    }
+
+    public ArrayList<Producto> filtrarProductoPrecio(double minimo, double maximo) {
+        ArrayList<Producto> listaFiltrada = new ArrayList<>();
+        for (Producto producto : productos) {
+            if (producto.getPrecio() >= minimo && producto.getPrecio() <= maximo) {
+                listaFiltrada.add(producto);
+            }
+        }
+        return listaFiltrada;
+        }
+
+    public void mostrarCategoriasDisponibles() {
+        System.out.println("Categorías disponibles:");
+        for (CategoriaProducto categoria : CategoriaProducto.values()) {
+            System.out.println("- " + categoria.getDescripcion());
+        }
+    }
 }
