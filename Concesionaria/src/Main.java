@@ -1,3 +1,6 @@
+import Concesionaria.Auto;
+import Concesionaria.Concesionaria;
+
 public class Main {
     public static void main(String[] args) {
         Concesionaria miConcesionaria = new Concesionaria("Mi Concesionaria");
@@ -14,10 +17,10 @@ public class Main {
         System.out.println("Total de km recoridos en autos: " + miConcesionaria.sumatoriaRecorridos());
         System.out.println("Promedio de km recorridos en autos: " + miConcesionaria.promedioKmRecorridos());
         System.out.println("Autos con mas km recorridos: " + miConcesionaria.autosMasKmRecorridos());
-        System.out.println("Auto con menos km recorridos: " + miConcesionaria.autoMenosKmRecorridos());
+        System.out.println("Concesionaria.Auto con menos km recorridos: " + miConcesionaria.autoMenosKmRecorridos());
         Auto encontrarAuto = miConcesionaria.buscarAutoIterator("ddf443");
         if (encontrarAuto != null) {
-            System.out.println("Auto encontrado: " + encontrarAuto);
+            System.out.println("Concesionaria.Auto encontrado: " + encontrarAuto);
         } else {
             System.out.println("No se encontró el auto");
 

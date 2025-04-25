@@ -1,5 +1,6 @@
+package Concesionaria;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 
 public class Concesionaria {
@@ -22,7 +23,7 @@ public class Concesionaria {
     }
     public void agregarAuto(Auto auto) {
         autos.add(auto);
-        System.out.println("Auto agregado: " + auto);
+        System.out.println("Concesionaria.Auto agregado: " + auto);
     }
     public int totalAutos() {
         return autos.size();
@@ -48,10 +49,10 @@ public class Concesionaria {
         return max;
     }
 
-    /*public Auto autoMasKmRecorridos(){
-        Auto autoMax = null;
+    /*public Concesionaria.Auto autoMasKmRecorridos(){
+        Concesionaria.Auto autoMax = null;
         int cantMaxima = 0;
-        for (Auto auto : autos) {
+        for (Concesionaria.Auto auto : autos) {
             if (auto.getKmRecorridos() > cantMaxima) {
                 cantMaxima = auto.getKmRecorridos();
                 autoMax = auto;
@@ -60,10 +61,10 @@ public class Concesionaria {
         return autoMax;
     }
 
-    public ArrayList<Auto> autosMasKmRecorridos() {
-        ArrayList<Auto> autosMas = new ArrayList<>();
+    public ArrayList<Concesionaria.Auto> autosMasKmRecorridos() {
+        ArrayList<Concesionaria.Auto> autosMas = new ArrayList<>();
         int maxRecorrido = maxKmRecorrido();
-        for (Auto auto : this.autos) {
+        for (Concesionaria.Auto auto : this.autos) {
             if (auto.getKmRecorridos() == maxRecorrido) {
                 autosMas.add(auto);
             }

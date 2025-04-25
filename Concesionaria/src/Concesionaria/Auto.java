@@ -1,3 +1,5 @@
+package Concesionaria;
+
 public class Auto {
     private String patente;
     private String color;
@@ -19,7 +21,7 @@ public class Auto {
 
     @Override
     public String toString() {
-        return "Auto{" +
+        return "Concesionaria.Auto{" +
                 "color='" + color + '\'' +
                 ", patente='" + patente + '\'' +
                 ", kmRecorridos=" + kmRecorridos +
