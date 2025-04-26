@@ -32,6 +32,7 @@ public class DivisionCurso {
     public Escuela getEscuela() {
         return escuela;
     }
+
     public void setEscuela(Escuela escuela) {
         this.escuela = escuela;
     }
@@ -55,5 +56,19 @@ public class DivisionCurso {
                 ", anio=" + anio +
                 ", division=" + division +
                 '}';
+    }
+
+    public Alumno mejorAlumnoDivision() {
+        Alumno mejorAlumno = null;
+        for (Catedra catedra : catedras) {
+            for (Alumno alumno : catedra.getAlumnos()) {
+                if (alumno.haRecuperado() || !alumno.tieneCincoExamenes()) {
+                    continue;
+                } else if (mejorAlumno == null || alumno.promedioNotas(null) > mejorAlumno.promedioNotas(null)) {
+                    mejorAlumno = alumno;
+                }
+            }
+        }
+        return mejorAlumno;
     }
 }

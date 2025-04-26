@@ -4,16 +4,16 @@ import java.util.List;
 public class Catedra {
     private int codigo;
     private String denominacion;
-    private List<Alumno> alumnos = new ArrayList<>();
+    private ArrayList<Alumno> alumnos = new ArrayList<>();
 
     public Catedra(int codigo, String denominacion) {
         this.codigo = codigo;
         this.denominacion = denominacion;
     }
-    public Catedra(int codigo, String denominacion, List<Alumno> alumnos) {
-        this.codigo = codigo;
-        this.denominacion = denominacion;
-        this.alumnos = alumnos;
+    public Catedra() {}
+
+    public ArrayList<Alumno> getAlumnos() {
+        return alumnos;
     }
 
     public int getCodigo() {
@@ -24,7 +24,7 @@ public class Catedra {
         this.codigo = codigo;
     }
 
-    public void setAlumnos(List<Alumno> alumnos) {
+    public void setAlumnos(ArrayList<Alumno> alumnos) {
         this.alumnos = alumnos;
     }
 
@@ -38,5 +38,15 @@ public class Catedra {
                 "codigo=" + codigo +
                 ", denominacion='" + denominacion + '\'' +
                 '}';
+    }
+
+    public Alumno mejorAlumnoCatedra() {
+        Alumno mejorPromedio = null;
+        for (Alumno alumno : alumnos) {
+            if (mejorPromedio == null || alumno.mejorNota(codigo) > mejorPromedio.mejorNota(codigo)) {
+                mejorPromedio = alumno;
+            }
+        }
+        return mejorPromedio;
     }
 }

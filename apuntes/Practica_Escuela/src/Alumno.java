@@ -65,19 +65,37 @@ public class Alumno {
     public double promedioNotas(Integer codigoCatedra) {
         double promedio = 0;
         int acumulador = 0;
-        boolean encontrado = false;
         for (Nota nota : notas) {
-            if (codigoCatedra != null && nota.getCatedra().getCodigo() == codigoCatedra) {
+            if (codigoCatedra == null || nota.getCatedra().getCodigo() == codigoCatedra) {
                 promedio += nota.getValor();
-                acumulador ++;
-                encontrado = true;
-            } else {
-                promedio += nota.getValor();
-                acumulador ++;
+                acumulador++;
             }
-
         }
-        return promedio/acumulador;
+        return acumulador > 0 ? promedio / acumulador : 0; // Evitar división por cero
     }
 
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public boolean haRecuperado() {
+        for (Nota nota : this.notas) {
+            if (nota.esRecuperatorio()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean tieneCincoExamenes(){
+        return this.notas.size() >= 5;
+    }
+    public boolean haDesaprobado() {
+        for (Nota nota : this.notas) {
+            if (nota.getValor() < 6) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
