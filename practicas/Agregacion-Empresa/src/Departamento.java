@@ -22,7 +22,7 @@ public class Departamento {
     }
 
     public void setListaEmpleados(ArrayList<Empleado> listaEmpleados) {
-        this.listaEmpleados = listaEmpleados;
+        this.listaEmpleados = new ArrayList<>(listaEmpleados);
     }
 
     public void agregarEmpleado(Empleado empleado) {

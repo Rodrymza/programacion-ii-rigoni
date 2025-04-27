@@ -22,7 +22,7 @@ public class Empresa {
     }
 
     public void setListaDepartamentos(ArrayList<Departamento> listaDepartamentos) {
-        this.listaDepartamentos = listaDepartamentos;
+        this.listaDepartamentos = new ArrayList<>(listaDepartamentos);
     }
 
     public void agregarDepartamento(Departamento departamento) {
