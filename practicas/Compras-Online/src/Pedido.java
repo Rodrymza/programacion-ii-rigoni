@@ -8,17 +8,11 @@ public class Pedido {
     private EstadoDePedido estado;
     private float total;
     private ArrayList<ProductoDeLinea> productosDeLineas;
+    private ArrayList<Pago> pagos;
 
     public Pedido() {
-    }
-
-    public Pedido(ArrayList<ProductoDeLinea> productosDeLineas, EstadoDePedido estado, Date fechaDePedido, String numero) {
-        this.productosDeLineas = productosDeLineas;
-        this.estado = estado;
-        this.fechaDePedido = fechaDePedido;
-        this.numero = numero;
-        this.total = calcularTotal();
-
+        this.productosDeLineas = new ArrayList<>();
+        this.pagos = new ArrayList<>();
     }
 
     public ArrayList<ProductoDeLinea> getProductosDeLineas() {
@@ -75,5 +69,15 @@ public class Pedido {
             total += producto.getCantidad() * producto.getPrecio();
         }
         return total;
+    }
+
+    public void agregarProducto(ProductoDeLinea producto) {
+        this.productosDeLineas.add(producto);
+        System.out.println("Producto " + producto.getNombre() + " añadido");
+    }
+
+    public void agregarPago(Pago pago) {
+        this.pagos.add(pago);
+        System.out.println("Metodo de pago " + pago.getDetalles() + " añadido");
     }
 }
