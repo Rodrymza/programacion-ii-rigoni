@@ -10,7 +10,7 @@ public class CartaNumeral extends CartaConPalo{
     }
 
     @Override
-    public void mostrar() {
-        System.out.println(getPalo() + ": " + numero + " (" + getColor() + ")");
+    public String getRepresentacion() {
+        return numero + super.getRepresentacion();
     }
 }

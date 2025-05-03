@@ -17,4 +17,9 @@ public abstract class CartaConPalo extends Carta {
     public ColorPalo getColor() {
         return getPalo().getColor();
     }
+
+    public String getRepresentacion() {
+    return " de " +palo;
+    }
+
 }

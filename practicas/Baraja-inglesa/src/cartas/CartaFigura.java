@@ -11,7 +11,7 @@ public class CartaFigura extends CartaConPalo{
     }
 
     @Override
-    public void mostrar() {
-        System.out.println(getPalo() + ": " + letra + " (" + getColor() + ")");
+    public String getRepresentacion() {
+        return letra  + super.getRepresentacion();
     }
 }

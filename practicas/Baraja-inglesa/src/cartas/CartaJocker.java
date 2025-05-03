@@ -8,8 +8,7 @@ public class CartaJocker extends Carta{
     }
 
     @Override
-    public void mostrar() {
-        String color = (aColor) ? "Con color" : "Sin color";
-        System.out.println("Jocker: " + color);
+    public String getRepresentacion() {
+        return ("Jocker " + (aColor ? "a colores" : "blanco y negro"));
     }
 }

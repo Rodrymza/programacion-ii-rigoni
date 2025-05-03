@@ -3,7 +3,9 @@ package cartas;
 public abstract class Carta {
     private boolean tapada;
 
-    public Carta() {}
+    public Carta() {
+        this.tapada = false;
+    }
 
     @Override
     public String toString() {
@@ -16,5 +18,15 @@ public abstract class Carta {
         this.tapada = false;
     }
 
-    public abstract void mostrar();
+    public void mostrar(){
+        if (tapada) {
+            System.out.println("******************");
+        } else {
+            System.out.println(getRepresentacion());
+        }
+    };
+
+    public String getRepresentacion(){
+        return "Carta generica";
+    }
 }
