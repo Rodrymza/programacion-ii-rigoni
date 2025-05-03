@@ -26,7 +26,5 @@ public abstract class Carta {
         }
     };
 
-    public String getRepresentacion(){
-        return "Carta generica";
-    }
+    public abstract String getRepresentacion();
 }
