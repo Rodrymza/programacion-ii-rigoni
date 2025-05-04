@@ -21,7 +21,7 @@ public abstract class Empleado {
     public abstract double calcularSalario();
 
     public void mostrarEmpleado(){
-        System.out.println("Apellido y Nombre: " + apellido + ", " + nombre + " Salario $" + calcularSalario());
+        System.out.println("Nombre: " + apellido + ", " + nombre + " Salario $" + calcularSalario());
     };
 
     public int calcularAntiguedad(){
