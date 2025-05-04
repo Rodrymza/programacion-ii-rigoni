@@ -22,7 +22,7 @@ public class Main {
         //creo isntancia de libro con objetos ya creados
         Libro libro1 = new Libro("Libro Ciencia Ficcion", 2020, cienciaFiccion, editorial1, autores);
         Ejemplar ejemplar1 = new Ejemplar("123456", EstadoEjemplar.DISPONIBLE, libro1);
-        Ejemplar ejemplar2 = new Ejemplar("654321", EstadoEjemplar.RETRASADO, libro1);
+        Ejemplar ejemplar2 = new Ejemplar("654321", EstadoEjemplar.DISPONIBLE , libro1);
 
         //agrego ejemplares a libro
         libro1.agregarEjemplar(ejemplar1);
