@@ -15,9 +15,19 @@ public class Empresa {
     }
 
     public Empleado empleadoConMasClientes() {
-        Empleado empleado = null;
-
-        return empleado;
+        Empleado empleadoMasClientes = null;
+        int maxClientes = -1;
+        for (Empleado empleado : empleados) {
+            if (empleado instanceof EmpleadoComision) {
+                EmpleadoComision empComisionActual = (EmpleadoComision) empleado;
+                int cantidad = empComisionActual.getCantidadClientes();
+                if (cantidad > maxClientes){
+                    empleadoMasClientes = empComisionActual;
+                    maxClientes = cantidad;
+                }
+            }
+        }
+        return empleadoMasClientes;
     }
 
     public void agregarEmpleado(Empleado empleado) {
