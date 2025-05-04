@@ -10,6 +10,10 @@ public class EmpleadoComision extends Empleado{
         this.montoCliente = montoCliente;
     }
 
+    public int getCantidadClientes() {
+        return cantidadClientes;
+    }
+
     @Override
     public double calcularSalario() {
         double salario = cantidadClientes * montoCliente;
