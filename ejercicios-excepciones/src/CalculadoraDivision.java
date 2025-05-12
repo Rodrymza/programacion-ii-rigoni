@@ -5,19 +5,20 @@ public class CalculadoraDivision {
     public CalculadoraDivision() {
     }
 
-    public double dividir() throws InputMismatchException, ArithmeticException {
+    private int pedirEntero(String mensaje) throws InputMismatchException {
         Scanner input = new Scanner(System.in);
-        double numerador = 0;
-        double denominador = 0;
+        System.out.println(mensaje);
+        int numero = input.nextInt();
+        return numero;
+    }
 
-        System.out.println("Igrese el numerador: ");
-        numerador = input.nextDouble();
-        System.out.println("Ingrese el denominador: ");
-        denominador = input.nextDouble();
+    public double dividir() throws InputMismatchException, ArithmeticException {
+        int numerador = pedirEntero("Ingrese el numerador: ");
+        int denominador = pedirEntero("Ingrese el denominador: ");
         if (denominador == 0) {
             throw new ArithmeticException("No se puede dividir por cero");
         }
-
-        return numerador / denominador;
+        return (double) numerador / denominador;
     }
 }
+
