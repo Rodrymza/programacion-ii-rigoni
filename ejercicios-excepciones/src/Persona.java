@@ -1,6 +1,8 @@
 public class Persona {
     private String nombre;
     private int edad;
+    final int EDADMAXIMA = 130;
+    final int EDADMINIMA = 0;
 
     public Persona(String nombre, int edad) {
         this.nombre = nombre;
@@ -8,8 +10,10 @@ public class Persona {
     }
 
     public void validarEdad(int edad) throws EdadInvalidaException {
-        if (edad < 0 || edad > 130) {
-            throw new EdadInvalidaException("Edad no valida: " + edad);
+        if (edad < EDADMINIMA) {
+            throw new EdadInvalidaException("La edad no puede ser menor a " + EDADMINIMA );
+        } else if (edad > EDADMAXIMA) {
+            throw new EdadInvalidaException("La edad no puede superar los " + EDADMAXIMA + " años");
         }
     }
 
