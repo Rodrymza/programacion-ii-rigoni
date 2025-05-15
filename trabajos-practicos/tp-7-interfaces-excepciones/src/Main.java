@@ -4,8 +4,9 @@ public class Main {
     public static void main(String[] args) {
         Producto producto1 = new Producto("Fideos Luchetti", 1500);
         Producto producto2 = new Producto("Arroz Tio Carlos", 1700);
+        Cliente cliente = new Cliente("Pedro Paz", "pedropaz@example.com");
 
-        Pedido miPedido = new Pedido();
+        Pedido miPedido = new Pedido(cliente);
         miPedido.agregarProducto(producto1);
         miPedido.agregarProducto(producto2);
 
@@ -22,6 +23,8 @@ public class Main {
 
         paypal.procesarPago(miPedido1.calcularTotal());
         paypal.aplicarDescuento(15);
+
+        miPedido.cambiarEstado(EstadoPedido.ENVIADO);
 
 
     }
