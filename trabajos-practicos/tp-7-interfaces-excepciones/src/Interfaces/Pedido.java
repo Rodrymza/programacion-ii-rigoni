@@ -1,3 +1,5 @@
+package Interfaces;
+
 import java.util.ArrayList;
 
 public class Pedido implements Pagable{

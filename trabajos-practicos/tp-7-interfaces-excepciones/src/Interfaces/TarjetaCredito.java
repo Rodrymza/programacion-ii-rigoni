@@ -1,3 +1,5 @@
+package Interfaces;
+
 public class TarjetaCredito implements PagoConDescuento{
     private String numero;
     private double montoAPagar;

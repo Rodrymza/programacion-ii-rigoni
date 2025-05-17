@@ -1,3 +1,5 @@
+package Interfaces;
+
 public enum EstadoPedido {
     PENDIENTE("Pendiente"),
     ENVIADO("Enviado"),

@@ -1,3 +1,5 @@
+package Interfaces;
+
 public class Cliente implements Notificable{
     private String nombre;
     private String email;

@@ -1,3 +1,5 @@
+package Interfaces;
+
 public class Paypal implements PagoConDescuento{
     private String email;
     private double montoAPagar;
